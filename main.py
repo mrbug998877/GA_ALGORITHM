@@ -39,7 +39,7 @@ class GA:
         s_inds = sorted(pop,key=itemgetter("fitness"),reverse=True)
         return s_inds[0]
     def selection(self,individuals,k):
-        s_inds = sorted(individuals,key=itemgetter,reverse=True)
+        s_inds = sorted(individuals,key=itemgetter("fitness"),reverse=True)
         sum_fits = sum(ind['fitness'] for ind in individuals)
 
         chosen = []
@@ -137,7 +137,13 @@ class GA:
                 print(" Max fitness of current pop: {}".format(max(fits)))
             print("--------End of (successful) evolution")
 if __name__ == "__main__":
+    CXPB, MUTPB, NGEN, popsize = 0.8, 0.1, 1000, 100  # popsize must be even number
 
+    up = [30, 30, 30, 30]  # upper range for variables
+    low = [1, 1, 1, 1]  # lower range for variables
+    parameter = [CXPB, MUTPB, NGEN, popsize, low, up]
+    run = GA(parameter)
+    run.GA_main()
 
 
 
