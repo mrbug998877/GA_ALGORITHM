@@ -51,12 +51,12 @@ class GA:
 if __name__ == "__main__":
     CXPB, MUTPB, NGEN, popsize = 0.8, 0.1, 1000, 100  # popsize must be even number
 
-    up = [30, 30, 30, 30]  # upper range for variables
-    low = [1, 1, 1, 1]  # lower range for variables
+    up = [30, 30, 30, 30] # upper range for variables
+    low = [1, 1, 1, 1] # lower range for variables
     parameter = [CXPB, MUTPB, NGEN, popsize, low, up]
     run = GA(parameter)
-    u = random.random()
+    # u = random.random()
     # print(u)
-    newoff1 = Gene(data=[])
+    # newoff1 = Gene(data=[])
     # print(newoff1.data)
-    #run.GA_main()
+    run.GA_main()
